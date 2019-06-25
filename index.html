@@ -1,192 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"><!--<![endif]-->
 <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <script type="text/javascript" async="" src="js/dc.js"></script>
+      
+  <title>Geonius - LeafletJS de A à Z</title>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Geonius - LeafletJS de A à Z">
+  <meta name="author" content="Arthur">
+  
+  <!-- viewport settings -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  
+  
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/social-likes_classic.css">
+  
+  <link rel="stylesheet" href="css/main.css">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Geonius</title>
+  <!-- Font -->
+  <link href="css/css_002.css" rel="stylesheet" type="text/css">
+  <link href="css/css.css" rel="stylesheet" type="text/css">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="http://themes.webexdigital.com/dynape/img/favicon.ico">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet">
+  <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-61591142-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>
-    <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <img src="img/logo-300.png" alt="Geonius">
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#earlyaccess">Early Access</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
+  <body style="overflow-x: hidden;">
+    
+      <!-- PRELOADING -->
+    <div class="preload" style="display: none;">  
+            <div class="spinner"></div>
+    </div>   
+        
+        
+    <nav class="navbar navbar-custom" role="navigation">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <p class="intro-text">Management and Publishing your <br><b>geograpic data</b> became easier.<br>
-                            Create a Mapserver using Geonius<br>in just 5 minutes.</p>
-                        <a href="#earlyaccess" class="btn btn-primary btn-lg">Get Early Access</a><br>
-                        <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
+                <div class="navbar-header">
+                  <img src="img/logo-300.png" style="width: 200px;">
+                </div>
+            </div>
+    </nav>
+        
+        
+        <!-- TOP -->
+    <div id="top" data-stellar-background-ratio="0.5" style="background-position: 0% 31px;">
+          <div class="container">
+              <div class="row">
+                  <div class="caption col-lg-12">
+                        <h1>Curso de Leaflet de A à Z</h1>
+                        <p>Entre em contato com um dos mapas interativos mais rápidos e fáceis de aprender na Web. <br>Construir mapas nunca foi tão fácil com o Leaflet.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+    </div>
+        
+        
+        <!-- CONTENT 1 -->
+        <section id="content1">
+          <div class="container">
+              <div class="row">
+                <h3 class="uppercase">Guia completo para criar aplicações ricas em mapas usando o Leaflet</h3>
+                <br>
+                <div class="col-lg-8 col-md-8 wow fadeInLeft animated" style="visibility: visible;">
+                  <ul class="list-unstyled lead">
+                    <li class="wow fadeInRight animated" data-wow-delay="0.2s" style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;"><i class="fa fa-2x fa-check-square-o"></i> Aprenda a criar mapas beaseado em aplicações usando a biblioteca LeafletJS</li>
+                    <li class="wow fadeInRight animated" data-wow-delay="0.2s" style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;"><i class="fa fa-2x fa-check-square-o"></i> Aprenda os conceitos fundamentais de LeafletJS</li>
+                    <li class="wow fadeInRight animated" data-wow-delay="0.2s" style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;"><i class="fa fa-2x fa-check-square-o"></i> Tópicos avançados em mapa de calor, clustering, animação e desenho nos mapas.</li>
+                    <li class="wow fadeInRight animated" data-wow-delay="0.2s" style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;"><i class="fa fa-2x fa-check-square-o"></i> Aprenda a usar marcadores do tipo Multipolylines and Multipolygons (Overlays)</li>
+                    <li class="wow fadeInRight animated" data-wow-delay="0.2s" style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;"><i class="fa fa-2x fa-check-square-o"></i> Aprenda a criar aplicações de mapas interativos e amigáveis</li>
+                  </ul>
+                  <br>
 
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2 style="color: #000;">About Geonius</h2>
-                <p>Our goal is to create an incredible API connected with many possibles front-end applications. So you can create your business over this base and use your imagination.</p>
-                <p>We will provide many examples and use cases to prove that we are the best way to create any application that uses geolocation and geodata.</p>
-                <p>Right now, we are still tweaking the software to provide you an awesome product!</p>
-            </div>
-        </div>
-    </section>
+                  <h3 class="uppercase">O que é o curso?</h3>
+                  <br>
+                  <p>O que exatamente é Leaflet? O Leaflet é uma biblioteca JavaScript leve usada para criar mapas interativos compatíveis com dispositivos móveis que oferecem vários recursos fáceis de usar para ajudar a criar mapas que podem ser integrados a qualquer aplicativo. Ele simplifica o processo de criar mapas a partir do zero, facilitando a modificação de mapas e a integração com diferentes aplicativos.</p>
+                  <br>
+                  <h2>Desenvolvemos um curso para tornar o aprendizado do Folheto e a criação de seus próprios mapas ainda mais fácil!</h2>
+                  <br>
+                  <p>Criamos este curso para novatos e desenvolvedores intermediários que desejam aprender exatamente como criar seus próprios mapas e integrá-los aos seus aplicativos. Este curso divide o ensino do Leaflet em segmentos menores e mais fáceis de entender, que não seguem apenas a teoria, mas também mostram exatamente como você pode construir seus próprios mapas. Também explicamos como adicionar recursos diferentes, como filtros, mapas de calor, polígonos, marcadores e muito mais.</p>
+                  <p>O curso começa desde o início, concentrando-se nos principais conceitos antes de passar para os diferentes tipos de mapas que você pode criar, os diferentes recursos que você pode adicionar ao seu mapa e até mesmo como integrá-lo ao seu aplicativo.</p>
+                  <p>O curso irá levá-lo passo a passo através dos diferentes tipos de mapas, tais como heatmaps, localização geográfica, tyepheads, bem como os diferentes recursos que você pode adicionar a um mapa (pop-ups, polígonos, marcadores, etc.). também aprenda como mostrar rotas em seus mapas, animar aspectos diferentes, adicionar efeitos de zoom entre outros.</p>
+                  <p>No final deste curso, você não apenas saberá como usar o Leaflet JS, mas também como construir mapas do zero, adicionar recursos, adicionar animações, mostrar rotas e muito mais!</p>
+                  <br>
 
-    <!-- earlyaccess Section -->
-    <section id="earlyaccess" class="content-section text-center">
-        <div class="earlyaccess-section">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>We are on beta</h2>
-                    <p>If you want to take early access, get news or receive a discount when we open to public, register your email with us.</p>
-                    <form class="signup-form navbar-form" action="//obanzo.us3.list-manage.com/subscribe/post?u=b7a7da161caf51acefacabe6e&amp;id=9b988d3ab6" method="POST" accept-charset="utf-8">
-                        <div class="form-group">
-                            <input type="text" name="EMAIL" id="mce-EMAIL" placeholder="Enter your email address" class="form-control" required>
-                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_b7a7da161caf51acefacabe6e_9b988d3ab6" tabindex="-1" value=""></div>
-                        </div>   
-                        <button class="btn btn-primary btn-lg" type="submit">Get Early Access</button>
-                    </form>
+                  <h3><i class="fa fa-2x fa-users"></i> Requisitos</h3>
+                  <br>
+                  <ul class="list-unstyled lead">
+                    <li class="wow fadeInRight animated" data-wow-delay="0.2s" style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;"><i class="fa fa-2x fa-check-square-o"></i> Conhecimento básico de Javascript é necessário para completar o curso.</li>
+                    <li class="wow fadeInRight animated" data-wow-delay="0.2s" style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;"><i class="fa fa-2x fa-check-square-o"></i> Um pouco de conhecimento de geografia e mapeamento seria bom, mas não é necessário</li>
+                  </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact" class="footer">
-        <div class="footer-content">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col links col-md-4 col-sm-4 col-xs-12">
-                        <div class="footer-col-inner">
-                            <h3 class="title">About us</h3>
-                            <ul class="list-unstyled">
-                                <li><a href="http://codium.com.br/"><i class="fa fa-caret-right"></i> Who we are</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right"></i> Blog</a></li>
-                            </ul>
-                        </div><!--//footer-col-inner-->
-                    </div><!--//foooter-col-->
+                  
                     
-                    <div class="footer-col download col-md-4 col-sm-4 col-xs-12">
-                        <div class="footer-col-inner">
-                            <h3 class="title">Mobile apps</h3>
-                            <ul class="list-unstyled download-list">
-                                <li><a href="#" class="btn btn-lg btn-default btn-ghost"><i class="fa fa-apple"></i><span class="text"> iOS coming soon...</span> </a></li>
-                                <li><a href="#" class="btn btn-lg btn-default btn-ghost"><i class="fa fa-android"></i><span class="text"> Android coming soon...</span></a></li>
-                                <li><a href="#" class="btn btn-lg btn-default btn-ghost"><i class="fa fa-windows"></i><span class="text"> Windows coming soon...</span></a></li>
-                            </ul>
-                        </div><!--//footer-col-inner-->
-                    </div><!--//download-->
-                    <div class="footer-col contact col-md-4 col-sm-4 col-xs-12">
-                        <div class="footer-col-inner">
-                            <h3 class="title">Contact us</h3>
-                            <p class="adr clearfix">
-                            <p style="font-size: 12px;color: #fff;opacity: 0.6;">Feel free to email us to provide some feedback on our work, give us suggestions for features, or to just say hello!</p>
-                            <p class="email"><i class="fa fa-envelope-o" style="color: #fff;opacity: 0.6;"></i><a href="#"> contact@geoni.us</a></p>
+                    <!-- FORM 1 -->
+                    <div class="col-lg-4 col-md-4 wow fadeInRight visible-lg visible-md animated" style="visibility: visible;">
+                      <div class="form1">
+                          <h2 class="blue"><i class="fa fa-pencil-square-o"></i> Inscrever-se no Curso</h2>
+                            <p>Valor: <b><s>R$ 259,00</s></b></p>
+                            <p>Valor promocional até 05/07/2019: <b>R$ 199,00</b></p>
+                            <!-- INICIO DO BOTAO PAGSEGURO --><a href="https://pag.ae/7V1f3RYeq/button" target="_blank" title="Pagar com PagSeguro"><img src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/205x30-pagar-azul.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a>
+                            <!-- FIM DO BOTAO PAGSEGURO -->
 
-                            <ul class="social list-inline">
-                                <li><a target="_blank" href="https://www.facebook.com/geoniusmap"><i class="fa fa-facebook"></i></a></li>
-                                <li><a target="_blank" href="https://twitter.com/geoniusmap"><i class="fa fa-twitter"></i></a></li>
-                                <li><a target="_blank" href="https://plus.google.com/u/0/b/112946106736000483665/112946106736000483665"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a target="_blank" href="https://github.com/geonius"><i class="fa fa-github"></i></a></li>
-                            </ul>
-                        </div><!--//footer-col-inner-->
-                    </div><!--//contact-->
+                          <div class="register-form-01">
+                            <form method='POST' action="https://ws.sandbox.pagseguro.uol.com.br/v2/checkout" id="formRegister">
+                              <input type="hidden" name="email" value="arthurmolina@yahoo.com.br">
+                              <input type="hidden" name="token" value="C2199A75094D4BCEB5C8A9DD7E07DA73">
+                              <input type="hidden" name="currency" value="BRL">
+                              <input type="hidden" name="itemId1" value="101">
+                              <input type="hidden" name="itemDescription1" value="Leaflet">
+                              <input type="hidden" name="itemAmount1" value="199.00">
+                              <input type="hidden" name="itemQuantity1" value="1">
+                              <input type="hidden" name="itemShippingCost1" value="0.00">
+                              <input type="text" name="senderName" class="name" placeholder="Nome completo">
+                              <input type="text" name="senderEmail" class="email" placeholder="endereço de email">
+                              <div>
+                                  <div class="pull-left">
+                                      <div class="message"></div>
+                                  </div>
+                                  <a class="button button-dark button-big uppercase pull-right" href="javascript:;" onclick="document.getElementById('formRegister').submit();">Inscrever-se</a>
+                                  <div class="clearfix"></div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                    </div> <!-- visible lg - md -->
                 </div>
-            </div><!--//container-->
-        </div><!--//footer-content-->
-        <div class="bottom-bar">
-            <div class="container">
-                <small class="copyright">Copyright @ 2015 <a target="_blank" href="http://codium.com.br/">Codium</a></small>                
-            </div><!--//container-->
-        </div><!--//bottom-bar-->
-    </footer>
+            </div>
+        </section>
+       
+       
+ https://sandbox.pagseguro.uol.com.br/userapplication/v2/authorization/request.jhtml?code=0D0379DF44F8484CBFEB4DD3D88DC29D
+        <!-- CONTENT 2 -->
+        <section id="content2">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-10 col-lg-offset-1">
+                <h3 class="text-center uppercase wow fadeInDown animated" style="visibility: visible;">O que o treinamento inclui:</h3>
+                <ul class="list-unstyled lead">
+                    <li class="wow fadeInRight animated" data-wow-delay="0.2s" style="visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;"><i class="fa fa-2x fa-check-square-o"></i> Visão Global sobre o Leaflet</li>
+                      <li class="wow fadeInRight animated" data-wow-delay="0.3s" style="visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;"><i class="fa fa-2x fa-check-square-o"></i> Começando (Criando um mapa base simples)</li>
+                      <li class="wow fadeInRight animated" data-wow-delay="0.4s" style="visibility: visible;-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; animation-delay: 0.4s;"><i class="fa fa-2x fa-check-square-o"></i> Trabalhando com camadas de base</li>
+                      <li class="wow fadeInRight animated" data-wow-delay="0.5s" style="visibility: visible;-webkit-animation-delay: 0.5s; -moz-animation-delay: 0.5s; animation-delay: 0.5s;"><i class="fa fa-2x fa-check-square-o"></i> Marcadores Multipolylines e Multipolygons (Overlays)</li>
+                      <li class="wow fadeInRight animated" data-wow-delay="0.6s" style="visibility: visible;-webkit-animation-delay: 0.6s; -moz-animation-delay: 0.6s; animation-delay: 0.6s;"><i class="fa fa-2x fa-check-square-o"></i> Eventos</li>
+                      <li class="wow fadeInRight animated" data-wow-delay="0.7s" style="visibility: visible;-webkit-animation-delay: 0.7s; -moz-animation-delay: 0.7s; animation-delay: 0.7s;"><i class="fa fa-2x fa-check-square-o"></i> Map controls</li>
+                      <li class="wow fadeInRight animated" data-wow-delay="0.8s" style="visibility: visible;-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;"><i class="fa fa-2x fa-check-square-o"></i> GeoJson</li>
+                      <li class="wow fadeInRight animated" data-wow-delay="0.8s" style="visibility: visible;-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;"><i class="fa fa-2x fa-check-square-o"></i> GeoCoding</li>
+                      <li class="wow fadeInRight animated" data-wow-delay="0.8s" style="visibility: visible;-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;"><i class="fa fa-2x fa-check-square-o"></i> Marcadores customizados</li>
+                      <li class="wow fadeInRight animated" data-wow-delay="0.8s" style="visibility: visible;-webkit-animation-delay: 0.8s; -moz-animation-delay: 0.8s; animation-delay: 0.8s;"><i class="fa fa-2x fa-check-square-o"></i> Criando Mapas de calor e mapas coropléticos</li>
+                  </ul>
+              </div>
+            </div>
+        </section>
+        
+        
+        <!-- CONTENT 3 -->
+        <section id="content3" class="wow fadeInDown animated" style="visibility: visible;">
+          <div class="container">
+              <div class="row">
+                
+                    <div class="col-lg-12 col-md-12">
+                      <h3>Para quem é este curso</h3>
+                      <p>Desenvolvedores front-end e web, Web designers, Estudantes ou qualquer um que queira aprender solução de mapeamento.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- MILESTONE -->
+        <div id="milestone" class="wow fadeInDown animated" data-stellar-background-ratio="0.5" style="visibility: visible; background-position: 0% -1176.52px;">
+          <div class="container">
+                  <div class="row">
+        
+                    <div class="col-lg-12 col-md-12">
+                      <h3>Instrutor</h3>
+                      <h2>Arthur Molina</h2>
+                      <p>Arquiteto Urbanista (UFC) e Analista de Sistemas (Estácio), com mestrado em Planejamento Urbano e Regional (IPPUR/UFRJ) e especialização em Política e Plajemaneto Urbano (IPPUR/UFRJ). Trabalha há mais de 15 anos com geoprocessamento e desenvolvimento de aplicações e mapeamento. Lider técnico de uma equipe de oito desenvolvedores na Prefeitura Municipal de Fortaleza.</p>
+                    </div>
+                    
+                    </div>
+            </div>
+        </div>
+        
+        <!-- FOOTER -->
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <p class="small pull-left">Geonius</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+        
+      <script src="js/jquery-1.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery_003.js"></script>
+        <script src="js/jquery_002.js"></script>
+        <script src="js/social-likes.js"></script>
+        <script src="js/retina-1.js"></script>
+        <script src="js/main.js"></script>
+        
+        <!-- GOOGLE ANALYTICS -->
+    <script type="text/javascript">
 
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-49575073-1']);
+      _gaq.push(['_trackPageview']);
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    </script>
+        
+  
 
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/grayscale.js"></script>
-
-</body>
-
-</html>
+</body></html>
